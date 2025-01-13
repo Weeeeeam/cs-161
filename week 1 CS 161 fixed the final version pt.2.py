@@ -22,6 +22,7 @@ def problem2():
 you are {age_real} years old in {time_passed} years you will be {age_real + time_passed} years old.
 If you save ${yearly_savings} per year then in {years_passed} years you will have ${yearly_savings * years_passed}.
 Your Average savings is ${yearly_savings / 12} per month.""")
+#This next one uses the date time library, this is my first time using this library please let me know if I should change anything.
 def problem3():
     import datetime
     day_1 = datetime.date(2025, 1, 1)
