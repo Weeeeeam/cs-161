@@ -59,29 +59,62 @@ def problem4_1():
     # says goodbye when a word under 5 charecters is entered
 
 def problem4_2():
-    word= input('please enter a word')
-    x = len(word)
+#the purpose of 'problem4_2' is simalar to 'problem4_1' except now it has a limit to the ammount of 
+    word= input('please enter a word: ')
+#this line takes the first word
     y=0
-    while x >5:
+# 'Y' tracks the number of attempts
+    while y <5 and len(word)>=5:
+#checks fot the too exit condition
+            print(word,'has',len(word),'letters')
+# shows the user how many letters there word has
+            word = input('enter another word please: ')
+# allows the user to enter a new word
+            y=y+1
+#adds one to the attempt counter    
+    if y<5:
         print('Goodbye!!!')
-        print ( word, 'has', len(word), 'letters')
-        y = y+1
-        word = input('please enter another word')
-    print('Goodbye!!!')
-    print ('loser')
+    else:
+        print('loser')
+#this If ELse statement looks at which reason the while loop ended and sends a message depending on why we exited the loop
+    exit
+
 
 def problem5():
+
      x= input_int('please enter a starting number')
      while(x<100):
+    #this while statemet makes the loop keep running till the  count hits 100 
         print(x)
+    #shares x in decimal form with user
         print(hex(x))
+    #share x in hexadecimal form with user
         print(bin(x))
+    #shares x in binary form with user 
         x = x+1
-    
-
+    #increases x value to prevent an infinite loop
+def problem6_1():
+#this function prints a star for the number eneter counting down each line
+    def starcounteriteration(x):
+        while x > 0:
+#this while loop keeps gointg till the input hits zero or lower
+            print(x*'*')
+# shares x ammount of stars with user
+            x = x-1
+# lowers x by 1
+    starcounteriteration(int(input('Starting Number?')))
+def problem6_2():
+#the function has the same purpose as the one above except now it uses recursion
+    def starcounterrecursion(x):
+        if x>0:
+            print(x*'*')
+            starcounterrecursion(x-1)
+        else:
+            exit
+    starcounterrecursion(int(input('Starting Number?')))
 def problemselect():
     #the goal of this function is to add a problem select to this project
-    x = (input('please enter what problem would you like: 1, 2, 3, 4.1, 4.2, 5 or quit to exit the function '))
+    x = (input('please enter what problem would you like: 1, 2, 3, 4.1, 4.2, 5, 6.1, 6.2 or quit to exit the function '))
     #asks user what problem they want to see
     if (x == '1'):
     # this line and the ones following will take the user input and compare then run a problem depending on what it asks.
@@ -96,6 +129,10 @@ def problemselect():
         problem4_2()
     elif (x=='5'):
         problem5()
+    elif (x=='6.1'):
+        problem6_1()
+    elif (x=='6.2'):
+        problem6_2()
     elif (x== 'quit'):
         quit()
     problemselect()
